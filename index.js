@@ -17,6 +17,7 @@ app.use(bodyParser.json())
 app.post("/deploy", (req, res) => {
         
     exec('cd ' + repo + ' && git pull');
+     res.json("worked");
     console.log(`Deployed to server`)
 
 
