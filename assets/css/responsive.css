@@ -328,6 +328,11 @@
         text-align: center;
     }
     .slide-text p {
+        display: block;
+        padding: 0px 0px 10px 0px !important;
+        width: 100%;
+    }
+    .slide-text p.description {
         display: none;
     }
     .slide-text h2 {
