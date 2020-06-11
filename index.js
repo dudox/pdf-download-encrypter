@@ -23,6 +23,7 @@ app.post("/deploy", (req, res) => {
 
         if (req.headers['x-hub-signature'] == sig) {
             exec('cd ' + repo + ' && git pull');
+            console.log(`Deployed to server`)
         }
 
     });
