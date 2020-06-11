@@ -18,15 +18,10 @@ const PORT = 3000
 app.use(bodyParser.json())
 
 app.post("/deploy", (req, res) => {
-    req.on('data', function(chunk) {
-        let sig = "sha1=" + crypto.createHmac('sha1', secret).update(chunk.toString()).digest('hex');
+        
+    exec('cd ' + repo + ' && git pull');
+    console.log(`Deployed to server`)
 
-        if (req.headers['x-hub-signature'] == sig) {
-            exec('cd ' + repo + ' && git pull');
-            console.log(`Deployed to server`)
-        }
-
-    });
 
 })
 
