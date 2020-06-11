@@ -272,7 +272,8 @@
     .logo {
         display: inline-block;
         margin-top: 5px;
-    }
+    } 
+
     .menu-bar.navbar-collapse {
         width: 100%;
     }
@@ -331,6 +332,10 @@
         display: block;
         padding: 0px 0px 10px 0px !important;
         width: 100%;
+    }
+
+    .slide-text p.description {
+        display: none;
     }
     .slide-text p.description {
         display: none;
