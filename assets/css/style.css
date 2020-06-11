@@ -49,6 +49,12 @@
     padding: 10px 30px 9px;
     text-transform: uppercase;
 }
+
+.bg-green {
+    background:  #49b970 !important;
+    color: #fff;
+}
+
 .header-btn:hover {
     color: #fff;
     background-color: #49b970;
