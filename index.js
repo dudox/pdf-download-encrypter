@@ -1,11 +1,8 @@
 // Require express and body-parser
 const express = require("express")
 const bodyParser = require("body-parser")
-const secret = "@dm1n..12345";
 const repo = "/var/www/book/";
 
-const http = require('http');
-const crypto = require('crypto');
 const exec = require('child_process').exec;
 
 
