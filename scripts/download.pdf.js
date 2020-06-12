@@ -25,7 +25,7 @@ let fn = (function () {
                     $.ajax({
                         type: "POST",
                         url: "http://trybemark.com:3000/download",
-                        data: _data,
+                        data: JSON.stringify(_data),
                         processData: false,
                         dataType: 'json',
                         contentType: false,
