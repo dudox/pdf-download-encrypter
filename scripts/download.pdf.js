@@ -35,7 +35,7 @@ let fn = (function () {
                         data: json,
                         dataType: 'json',
                         processData: false,
-                        contentType: false,
+                        contentType: "application/json; charset=utf-8",
                         success: function (tx) {},
                     });
 
