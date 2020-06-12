@@ -22,7 +22,6 @@ app.post("/deploy", (req, res) => {
 
 app.post("/download", (req, res) => {
     exec("cd " + repo+" && ./encrypt.sh");
-    //res.json(req.body.name);
     res.json("success");
     console.log(req.body.name);
 });
