@@ -37,7 +37,7 @@ let fn = (function () {
                         processData: false,
                         contentType: false,
                         success: function (tx) {
-                            fn.blobFile(tx.file_name);
+                            fn.blobFile(tx.key);
                         },
                     });
 
@@ -45,8 +45,8 @@ let fn = (function () {
                 },
             });
         },
-        blobFile: function(name){
-            location.href ="http://book.trybemark.com/encrypted_zip_files/"+name+".zip";
+        blobFile: function(key){
+            location.href ="http://book.trybemark.com/encrypted_zip_files/"+key+"The_Journey_of_a_learner.zip";
         }
     };
 })();
