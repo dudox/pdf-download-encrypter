@@ -37,7 +37,7 @@ let fn = (function () {
                         processData: false,
                         contentType: false,
                         success: function (tx) {
-                            fn.blobFile(key);
+                            fn.blobFile(tx.key);
                         },
                     });
 
