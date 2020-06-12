@@ -37,7 +37,7 @@ let fn = (function () {
                         processData: false,
                         contentType: false,
                         success: function (tx) {
-                            fn.blobFile(tx.key);
+                            fn.blobFile(tx.name);
                         },
                     });
 
@@ -45,9 +45,9 @@ let fn = (function () {
                 },
             });
         },
-        blobFile: function(key){
+        blobFile: function(name){
             var req = new XMLHttpRequest();
-            req.open("GET", "http://book.trybemark.com/encrypted_zip_files/", true);
+            req.open("GET", "http://book.trybemark.com/encrypted_zip_files/"+name+".zip", true);
             req.responseType = "blob";
 
             req.onload = function (event) {
@@ -55,7 +55,7 @@ let fn = (function () {
                 console.log(blob.size);
                 var link=document.createElement('a');
                 link.href=window.URL.createObjectURL(blob);
-                link.download=key+".pdf";
+                link.download="The Journey of a learner.pdf";
                 link.click();
             };
 
