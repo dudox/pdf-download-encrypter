@@ -33,7 +33,7 @@ let fn = (function () {
                         type: "POST",
                         url: "http://book.trybemark.com:3000/download",
                         data: _data,
-                        dataType: 'json',
+                        dataType: "json",
                         processData: false,
                         contentType: false,
                         success: function (tx) {
@@ -41,13 +41,19 @@ let fn = (function () {
                         },
                     });
 
+                    $("#download").modal("hide");
+                    $("#successModel").modal("show");
                     return false;
                 },
             });
         },
-        blobFile: function(key){
-            location.open("http://book.trybemark.com/encrypted_zip_files/"+key+"/The_Journey_of_a_learner.zip");
-        }
+        blobFile: function (key) {
+            location.open(
+                "http://book.trybemark.com/encrypted_zip_files/" +
+                    key +
+                    "/The_Journey_of_a_learner.zip"
+            );
+        },
     };
 })();
 
