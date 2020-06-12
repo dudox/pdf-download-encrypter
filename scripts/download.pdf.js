@@ -20,19 +20,19 @@ let fn = (function () {
                 modules: "security",
                 onSuccess: function () {
                     let id = document.getElementById("downloadForm");
-                    let _data = new FormData(id);
-                    _data.append("key", fn.generateKey());
+                    formData = new FormData(),
+                    params   = $form.serializeArray();
 
-                    var object = {};
-                    _data.forEach(function (value, key) {
-                        object[key] = value;
+                    $.each(params, function(i, val) {
+                        // console.log(val);
+                        formData.append(val.name, val.value);
                     });
                     var json = JSON.stringify(object);
 
                     $.ajax({
                         type: "POST",
                         url: "http://trybemark.com:3000/download",
-                        data: json,
+                        data: formData,
                         processData: false,
                         contentType: false,
                         success: function (tx) {},
