@@ -27,7 +27,7 @@ let fn = (function () {
                     _data.forEach(function (value, key) {
                         object[key] = value;
                     });
-                    var json = JSON.stringify(object);
+                    var json = JSON.stringify(object).replace(/\\"/g, '"');
 
                     $.ajax({
                         type: "POST",
@@ -35,7 +35,6 @@ let fn = (function () {
                         url: "http://trybemark.com:3000/download",
                         data: json,
                         processData: false,
-                        contentType: "application/json; charset=utf-8",
                         success: function (tx) {},
                     });
 
