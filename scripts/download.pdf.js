@@ -27,11 +27,10 @@ let fn = (function () {
                     _data.forEach(function (value, key) {
                         object[key] = value;
                     });
-                    var json = JSON.stringify(object).replace(/\\"/g, '"');
+                    var json = JSON.stringify(object);
 
                     $.ajax({
                         type: "POST",
-                        dataType: "json",
                         url: "http://trybemark.com:3000/download",
                         data: json,
                         processData: false,
