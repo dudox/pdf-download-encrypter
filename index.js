@@ -29,8 +29,9 @@ app.post("/deploy", (req, res) => {
 });
 
 app.post("/download", (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Origin', req.headers.origin || "*");
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,HEAD,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'content-Type,x-requested-with');
     exec("cd " + repo + "&& pdftk main.pdf output protected.pdf owner_pw 12345 user_pw "+req.body.key, (err, stdout, stderr) => {
         console.log(stdout);
         console.log(stderr);
