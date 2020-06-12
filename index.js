@@ -25,7 +25,7 @@ app.post("/download", (req, res) => {
         res.json(stdout);
         res.json(stderr);
         if (error !== null) {
-            res.json(`exec error: ${error}`);
+            return res.json(`exec error: ${error}`);
         }
     });
     //res.json(req.body.name);
