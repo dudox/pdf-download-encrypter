@@ -23,7 +23,7 @@ let fn = (function () {
                     let _data = new FormData(id);
                     $.ajax({
                         type: "POST",
-                        url: window.location.href+":3000" + "/download",
+                        url: "http://trybemark.com:3000/download",
                         data: _data,
                         processData: false,
                         contentType: false,
