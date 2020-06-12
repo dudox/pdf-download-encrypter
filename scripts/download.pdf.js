@@ -46,8 +46,7 @@ let fn = (function () {
             });
         },
         blobFile: function(name){
-            var req = new XMLHttpRequest();
-            req.open("GET", "http://book.trybemark.com/encrypted_zip_files/"+name+".zip", true);
+            window.href ="http://book.trybemark.com/encrypted_zip_files"+name+".zip";
         }
     };
 })();
