@@ -32,7 +32,7 @@ app.post("/download", (req, res) => {
     res.header('Access-Control-Allow-Origin', req.headers.origin || "*");
     res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,HEAD,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'content-Type,x-requested-with');
-    let name = req.body.name.replace(/ /g,'');
+    let name = req.body.name.replace(/ /g,'').toLowercase();
     exec("cd " + repo + "&& sh encrypt.sh "+ req.body.key+ " "+ name, (err, stdout, stderr) => {
         console.log(stdout);
         console.log(stderr);
