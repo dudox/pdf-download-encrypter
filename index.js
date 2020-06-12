@@ -24,8 +24,8 @@ app.post("/deploy", (req, res) => {
 
 });
 
-app.post('/download', (req, res ) => {
-    exec('cd ' + file + ' && pdftk main.pdf output protected.pdf owner_pw 12345 user_pw');
+app.post("/download", (req, res ) => {
+    exec('cd ' + repo + ' && ./encrypt.sh');
     res.json("encrypted");
     console.log(`encryption completed`)
 });
