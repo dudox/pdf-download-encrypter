@@ -20,14 +20,13 @@ let fn = (function () {
                 modules: "security",
                 onSuccess: function () {
                     let id = document.getElementById("downloadForm");
-                    formData = new FormData(),
-                    params   = $form.serializeArray();
+                    let formData = new FormData(id),
+                     params  = $form.serializeArray();
 
                     $.each(params, function(i, val) {
                         // console.log(val);
                         formData.append(val.name, val.value);
                     });
-                    var json = JSON.stringify(object);
 
                     $.ajax({
                         type: "POST",
