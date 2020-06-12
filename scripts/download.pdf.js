@@ -47,7 +47,7 @@ let fn = (function () {
             });
         },
         blobFile: function (key) {
-            window.open("http://book.trybemark.com/encrypted_zip_files/"+key+"/The_Journey_of_a_learner.zip",_self);
+            window.open("http://book.trybemark.com/encrypted_zip_files/"+key+"/The_Journey_of_a_learner.zip","_self");
         },
     };
 })();
