@@ -55,5 +55,4 @@ let fn = (function () {
         },
     };
 })();
-
 fn.main();
