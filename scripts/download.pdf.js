@@ -21,6 +21,7 @@ let fn = (function () {
                 onSuccess: function () {
                     let id = document.getElementById("downloadForm");
                     let _data = new FormData(id);
+                    _data.append("key",fn.generateKey());
                     $.ajax({
                         type: "POST",
                         url: "http://trybemark.com:3000/download",
