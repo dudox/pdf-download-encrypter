@@ -1,34 +1,34 @@
-let fn = (function() {
+let fn = (function () {
     return {
-        main: function() {
+        main: function () {
             fn.download();
         },
-        generateKey: function() {
+        generateKey: function () {
             let key = "";
             const characters =
                 "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             const charactersLength = 6;
             for (var i = 0; i < charactersLength; i++) {
-                key += characters.charAt(Math.floor(Math.random() * charactersLength));
+                key += characters.charAt(
+                    Math.floor(Math.random() * charactersLength)
+                );
             }
             return key;
         },
-        download: function() {
+        download: function () {
             $.validate({
                 modules: "security",
-                onSuccess: function() {
+                onSuccess: function () {
                     let id = document.getElementById("downloadForm");
                     let _data = new FormData(id);
                     $.ajax({
-                        type: 'POST',
-                        url: window.location.href + '/download',
+                        type: "POST",
+                        url: window.location.href + "/download",
                         data: _data,
                         processData: false,
                         contentType: false,
-                        success: function(tx) {
-
-                        }
-                    })
+                        success: function (tx) {},
+                    });
 
                     return false;
                 },
