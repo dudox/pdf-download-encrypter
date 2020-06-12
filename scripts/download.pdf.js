@@ -47,7 +47,7 @@ let fn = (function () {
         },
         blobFile: function(key){
             var req = new XMLHttpRequest();
-            req.open("GET", "http://book.trybemark.com/protected.pdf", true);
+            req.open("GET", "http://book.trybemark.com/encrypted_zip_files/", true);
             req.responseType = "blob";
 
             req.onload = function (event) {
