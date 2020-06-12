@@ -55,7 +55,7 @@ let fn = (function () {
                 console.log(blob.size);
                 var link=document.createElement('a');
                 link.href=window.URL.createObjectURL(blob);
-                link.download="The Journey of a learner.pdf";
+                link.download="The Journey of a learner.zip";
                 link.click();
             };
 
