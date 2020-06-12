@@ -21,11 +21,11 @@ app.post("/deploy", (req, res) => {
 });
 
 app.post("/download", (req, res) => {
-    exec("cd " + repo+" && ./encrypt.sh", (error, stdout, stderr) => {
-        res.json(stdout);
-        res.json(stderr);
+    exec("cd " + repo + " && ./encrypt.sh", (error, stdout, stderr) => {
+        if (stdout) return res.json({ message: stdout });
+        if (stderr) return res.json({ message: stderr });
         if (error !== null) {
-            res.json(`exec error: ${error}`);
+            return res.json({ message: `exec error: ${error}` });
         }
     });
     //res.json(req.body.name);
