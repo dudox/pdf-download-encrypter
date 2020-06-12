@@ -5,5 +5,5 @@ mkdir -m 777  encrypted_zip_files/ && mkdir -m 777  encrypted_zip_files/"$1"
 echo "your password is $1" > readme.txt
 zip -9 -r The_Journey_of_a_learner.zip The_Journey_of_a_learner.pdf readme.txt
 mv The_Journey_of_a_learner.zip encrypted_zip_files/"$1"
-chmod 777 -R encrypted_zip_files/"$1"/The_Journey_of_a_learner.zip
+chmod 777 -R encrypted_zip_files/"$1"
 rm -r "$1".pdf
