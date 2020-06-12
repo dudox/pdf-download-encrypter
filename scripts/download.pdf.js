@@ -13,7 +13,7 @@ let fn = (function(){
 
                     $.ajax({
                         type: 'POST',
-                        url: window.location.href,
+                        url: window.location.href+'/download',
                         data: _data,
                         processData: false,
                         contentType: false,
