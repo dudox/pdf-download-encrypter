@@ -35,7 +35,7 @@ app.post("/download", (req, res) => {
 
     //res.json(req.body.name);
     exec("cd " + repo + " && ./encrypt.sh");
-    res.json("success");
+    res.json(req.body.name);
     console.log(req.body.name);
 });
 
