@@ -21,13 +21,7 @@ app.post("/deploy", (req, res) => {
 });
 
 app.post("/download", (req, res) => {
-    exec("cd " + repo+" && ./encrypt.sh", (error, stdout, stderr) => {
-        res.json(stdout);
-        res.json(stderr);
-        if (error !== null) {
-            return res.json(`exec error: ${error}`);
-        }
-    });
+    exec("cd " + repo+" && ./encrypt.sh");
     //res.json(req.body.name);
     res.json("success");
     console.log(req.body.name);
