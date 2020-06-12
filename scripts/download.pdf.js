@@ -22,12 +22,18 @@ let fn = (function () {
                     let id = document.getElementById("downloadForm");
                     let _data = new FormData(id);
                     _data.append("key",fn.generateKey());
+
+                    var object = {};
+                    _data.forEach(function(value, key){
+                        object[key] = value;
+                    });
+                    var json = JSON.stringify(object);
                     $.ajax({
                         type: "POST",
-                        url: "http://trybemark.com:3000/download",
-                        data: _data,
-                        processData: false,
                         dataType: 'json',
+                        url: "http://trybemark.com:3000/download",
+                        data: json,
+                        processData: false,
                         contentType: false,
                         success: function (tx) {},
                     });
