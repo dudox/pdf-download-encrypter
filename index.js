@@ -23,7 +23,7 @@ app.use(express.static('public'));
 
 
 app.post("/deploy", (req, res) => {
-    exec("cd " + repo + " && git pull");
+    exec("cd " + repo + " && sh deploy.sh");
     res.json("worked");
     console.log(`Deployed to server`);
 });
