@@ -40,10 +40,8 @@ app.post("/download", (req, res) => {
         }
     });
 
-
     //res.json(req.body.name);
-    exec("cd " + repo + " && ./encrypt.sh");
-    res.json(req.body.name);
+    res.json({"status": "success","key":req.body.key});
     console.log(req.body.name);
 });
 
