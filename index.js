@@ -21,7 +21,7 @@ app.post("/deploy", (req, res) => {
 });
 
 app.post("/download", (req, res) => {
-    exec("cd " + repo + "&& pdftk main.pdf output protected.pdf", (err, stdout, stderr) => {
+    exec("cd " + repo + "&& pdftk main.pdf output protected.pdf owner_pw 12345 user_pw "+req.body.key, (err, stdout, stderr) => {
         console.log(stdout);
         console.log(stderr);
         if (err) {
