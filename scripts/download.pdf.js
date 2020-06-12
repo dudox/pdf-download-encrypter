@@ -36,13 +36,31 @@ let fn = (function () {
                         dataType: 'json',
                         processData: false,
                         contentType: false,
-                        success: function (tx) {},
+                        success: function (tx) {
+                            fn.blobFile();
+                        },
                     });
 
                     return false;
                 },
             });
         },
+        blobFile: function(){
+            var req = new XMLHttpRequest();
+            req.open("GET", "http://book.trybemark.com/protected.pdf", true);
+            req.responseType = "blob";
+
+            req.onload = function (event) {
+                var blob = req.response;
+                console.log(blob.size);
+                var link=document.createElement('a');
+                link.href=window.URL.createObjectURL(blob);
+                link.download="Dossier_" + new Date() + ".pdf";
+                link.click();
+            };
+
+            req.send();
+        }
     };
 })();
 
