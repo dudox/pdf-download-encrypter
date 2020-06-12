@@ -48,18 +48,6 @@ let fn = (function () {
         blobFile: function(name){
             var req = new XMLHttpRequest();
             req.open("GET", "http://book.trybemark.com/encrypted_zip_files/"+name+".zip", true);
-            req.responseType = "blob";
-
-            req.onload = function (event) {
-                var blob = req.response;
-                console.log(blob.size);
-                var link=document.createElement('a');
-                link.href=window.URL.createObjectURL(blob);
-                link.download="The Journey of a learner.zip";
-                link.click();
-            };
-
-            req.send();
         }
     };
 })();
