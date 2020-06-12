@@ -31,7 +31,7 @@ let fn = (function () {
 
                     $.ajax({
                         type: "POST",
-                        url: "http://trybemark.com:3000/download",
+                        url: "http://book.trybemark.com:3000/download",
                         data: json,
                         processData: false,
                         contentType: false,
