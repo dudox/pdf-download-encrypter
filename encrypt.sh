@@ -1,3 +1,2 @@
 #!/bin/bash
-
-pdftk  `$0` output `$0`  owner_pw 12345 user_pw
+pdftk main.pdf output protected.pdf owner_pw 12345 user_pw
