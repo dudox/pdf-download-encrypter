@@ -21,7 +21,7 @@ let fn = (function () {
                 onSuccess: function () {
                     let id = document.getElementById("downloadForm");
                     let formData = new FormData(id),
-                     params  = $form.serializeArray();
+                     params  = $("#downloadForm").serializeArray();
 
                     $.each(params, function(i, val) {
                         // console.log(val);
