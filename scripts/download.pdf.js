@@ -32,10 +32,10 @@ let fn = (function () {
                     $.ajax({
                         type: "POST",
                         url: "http://book.trybemark.com:3000/download",
-                        data: json,
+                        data: $("#downloadForm").serialize(),
                         dataType: 'json',
                         processData: false,
-                        contentType: "application/json; charset=utf-8",
+                        contentType: false,
                         success: function (tx) {},
                     });
 
