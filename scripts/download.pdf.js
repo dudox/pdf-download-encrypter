@@ -28,7 +28,6 @@ let fn = (function () {
                         object[key] = value;
                     });
                     var json = JSON.stringify(object);
-
                     $.ajax({
                         type: "POST",
                         url: "http://book.trybemark.com:3000/download",
