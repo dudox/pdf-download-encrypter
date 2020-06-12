@@ -28,12 +28,14 @@ let fn = (function () {
                         object[key] = value;
                     });
                     var json = JSON.stringify(object);
+
                     $.ajax({
                         type: "POST",
                         dataType: "json",
                         url: "http://trybemark.com:3000/download",
                         data: json,
-                        contentType: false,
+                        processData: false,
+                        contentType: "application/json; charset=utf-8",
                         success: function (tx) {},
                     });
 
