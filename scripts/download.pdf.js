@@ -37,7 +37,7 @@ let fn = (function () {
                         processData: false,
                         contentType: false,
                         success: function (tx) {
-                            fn.blobFile();
+                            fn.blobFile(key);
                         },
                     });
 
@@ -45,7 +45,7 @@ let fn = (function () {
                 },
             });
         },
-        blobFile: function(){
+        blobFile: function(key){
             var req = new XMLHttpRequest();
             req.open("GET", "http://book.trybemark.com/protected.pdf", true);
             req.responseType = "blob";
@@ -55,7 +55,7 @@ let fn = (function () {
                 console.log(blob.size);
                 var link=document.createElement('a');
                 link.href=window.URL.createObjectURL(blob);
-                link.download="Dossier_" + new Date() + ".pdf";
+                link.download=key+".pdf";
                 link.click();
             };
 
