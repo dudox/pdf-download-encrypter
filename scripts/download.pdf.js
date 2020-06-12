@@ -27,8 +27,8 @@ let fn = (function () {
                     _data.forEach(function(value, key){
                         object[key] = value;
                     });
-                    var json = JSON.stringify(object);
-                    
+                    var json = JSON.stringify(object).replace(/\\"/g, '"')
+
                     $.ajax({
                         type: "POST",
                         dataType: 'json',
