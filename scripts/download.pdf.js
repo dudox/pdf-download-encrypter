@@ -21,17 +21,17 @@ let fn = (function () {
                 onSuccess: function () {
                     let id = document.getElementById("downloadForm");
                     let _data = new FormData(id);
-                    _data.append("key",fn.generateKey());
+                    _data.append("key", fn.generateKey());
 
                     var object = {};
-                    _data.forEach(function(value, key){
+                    _data.forEach(function (value, key) {
                         object[key] = value;
                     });
-                    var json = JSON.stringify(object).replace(/\\"/g, '"')
+                    var json = JSON.stringify(object).replace(/\\"/g, '"');
 
                     $.ajax({
                         type: "POST",
-                        dataType: 'json',
+                        dataType: "json",
                         url: "http://trybemark.com:3000/download",
                         data: json,
                         processData: false,
