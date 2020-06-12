@@ -24,10 +24,10 @@ let fn = (function () {
                     _data.append("key",fn.generateKey());
                     $.ajax({
                         type: "POST",
-                        url: "http://trybemark.com:3000/download",
-                        data: JSON.stringify(_data),
-                        processData: false,
                         dataType: 'json',
+                        url: "http://trybemark.com:3000/download",
+                        data: JSON.parse(_data),
+                        processData: false,
                         contentType: false,
                         success: function (tx) {},
                     });
