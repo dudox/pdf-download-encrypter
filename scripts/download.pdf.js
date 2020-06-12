@@ -32,10 +32,8 @@ let fn = (function () {
                     $.ajax({
                         type: "POST",
                         url: "http://book.trybemark.com:3000/download",
-                        data: _data,
-                        dataType: 'json',
+                        data: json,
                         processData: false,
-                        contentType: false,
                         success: function (tx) {},
                     });
 
