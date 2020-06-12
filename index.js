@@ -2,6 +2,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const repo = "/var/www/book/";
+const file = "/var/www/book/file/";
 
 const exec = require('child_process').exec;
 
@@ -24,7 +25,9 @@ app.post("/deploy", (req, res) => {
 });
 
 app.post('/download', (req, res ) => {
-
+    exec('cd ' + file + ' && pdftk main.pdf output protected.pdf owner_pw 12345 user_pw');
+    res.json("encrypted");
+    console.log(`encryption completed`)
 });
 
 
