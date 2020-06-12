@@ -22,7 +22,7 @@ app.post("/deploy", (req, res) => {
 
 app.post("/download", (req, res) => {
     exec("cd " + repo + " && ./encrypt.sh ./file/");
-    res.json("encrypted");
+    res.json(req);
     console.log(`encryption completed`);
 });
 
