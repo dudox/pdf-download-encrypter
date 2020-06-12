@@ -1,6 +1,8 @@
 // Require express and body-parser
 const express = require("express");
 const bodyParser = require("body-parser");
+var multer = require('multer');
+var upload = multer();
 const repo = "/var/www/book/";
 const file = "/var/www/book/file/";
 
@@ -14,6 +16,9 @@ const PORT = 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(upload.array()); 
+app.use(express.static('public'));
 
 
 
