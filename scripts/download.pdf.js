@@ -20,18 +20,13 @@ let fn = (function () {
                 modules: "security",
                 onSuccess: function () {
                     let id = document.getElementById("downloadForm");
-                    let formData = new FormData(id),
-                     params  = $("#downloadForm").serializeArray();
+                    let data = new FormData(id);
 
-                    $.each(params, function(i, val) {
-                        // console.log(val);
-                        formData.append(val.name, val.value);
-                    });
-
+                  
                     $.ajax({
                         type: "POST",
                         url: "http://trybemark.com:3000/download",
-                        data: formData,
+                        data: data,
                         processData: false,
                         contentType: false,
                         success: function (tx) {},
