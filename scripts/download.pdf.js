@@ -34,6 +34,7 @@ let fn = (function () {
                         url: "http://trybemark.com:3000/download",
                         data: json,
                         processData: false,
+                        contentType: false,
                         success: function (tx) {},
                     });
 
