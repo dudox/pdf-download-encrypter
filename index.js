@@ -13,6 +13,8 @@ const PORT = 3000;
 // Tell express to use body-parser's JSON parsing
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 app.post("/deploy", (req, res) => {
     exec("cd " + repo + " && git pull");
