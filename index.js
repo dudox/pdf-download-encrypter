@@ -22,8 +22,8 @@ app.post("/deploy", (req, res) => {
 
 app.post("/download", (req, res) => {
     exec("cd " + repo + " && ./encrypt.sh ./file/");
-    res.json(req.body.name);
-    console.log(`encryption completed`);
+    //res.json(req.body.name);
+    console.log(req.body.name);
 });
 
 // Start express on the defined port
