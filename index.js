@@ -32,8 +32,8 @@ app.post("/download", (req, res) => {
     res.header('Access-Control-Allow-Origin', req.headers.origin || "*");
     res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,HEAD,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'content-Type,x-requested-with');
-    let name = req.body.name.toLowerCase().replace(/\s/g, '');
-    exec("cd " + repo + "&& sh encrypt.sh "+ req.body.key+ " "+ name, (err, stdout, stderr) => {
+    let key = req.body.key.toLowerCase().replace(/\s/g, '');
+    exec("cd " + repo + "&& sh encrypt.sh "+ key, (err, stdout, stderr) => {
         console.log(stdout);
         console.log(stderr);
         if (err) {
@@ -42,7 +42,7 @@ app.post("/download", (req, res) => {
     });
 
     //res.json(req.body.name);
-    res.json({"status": "success","key":req.body.key,"file_name":name});
+    res.json({"status": "success","key":key,"name":req.body.name});
     console.log(req.body.name);
 });
 
