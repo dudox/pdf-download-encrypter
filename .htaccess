@@ -1,2 +1,2 @@
 RewriteEngine On
-RewriteRule ^(maintenance/.*)$ https://book.trybemark.com/$1 [R=301,L]
+RewriteRule ^(maintenance/.*)$ http://book.trybemark.com/$1 [R=301,L]
