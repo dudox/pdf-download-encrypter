@@ -1,17 +1,10 @@
 RewriteEngine on
 RewriteBase /
 
+RewriteCond %{HTTPS} on
+
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^(.*)\.html$ /$1 [L,R=301]
-
-
-# Rewrites all URLS without blog in them
-RewriteCond %{REQUEST_URI} !^/blog/
-
-# Rewrites all URLS [Replace "example" with the actual domain, without the TLD (.com, .net, .biz, etc)]
-RewriteCond %{HTTP_HOST} ^(www\.)?example\.
-
-# Rewrite all those to insert /folder
-RewriteRule ^(.*)$ /blog/$1 [L]
