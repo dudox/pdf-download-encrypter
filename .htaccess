@@ -1,2 +1,3 @@
 RewriteEngine On
+RewriteCond %{HTTPS} off
 RewriteRule ^(/.*)$ http://book.trybemark.com/$1 [R=301,L]
